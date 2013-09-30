@@ -8,12 +8,10 @@
 
 #import "CrowdNavigationViewController.h"
 #import <AVFoundation/AVAudioPlayer.h>
-#import <AudioToolbox/AudioToolbox.h>
 
 @interface CrowdNavigationViewController ()
 - (IBAction)getDirection:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *displayDirection;
-@property SystemSoundID mySound;
 
 @end
 
