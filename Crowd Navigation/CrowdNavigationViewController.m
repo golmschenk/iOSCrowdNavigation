@@ -9,6 +9,8 @@
 #import "CrowdNavigationViewController.h"
 
 @interface CrowdNavigationViewController ()
+- (IBAction)getDirection:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *displayDirection;
 
 @end
 
@@ -26,4 +28,6 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)getDirection:(id)sender {
+}
 @end
