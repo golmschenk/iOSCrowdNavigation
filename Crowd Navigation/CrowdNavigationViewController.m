@@ -29,5 +29,18 @@
 }
 
 - (IBAction)getDirection:(id)sender {
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.7.102:8080/getdirection"]
+                                                           cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                                       timeoutInterval:10];
+    
+    [request setHTTPMethod: @"GET"];
+    
+    NSError *requestError;
+    NSURLResponse *urlResponse = nil;
+    
+    
+    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
+    NSString* responseString = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+    self.displayDirection.text = responseString;
 }
 @end
