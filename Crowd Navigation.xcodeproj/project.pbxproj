@@ -21,6 +21,10 @@
 		F36A18DB17F611000024D87A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F36A18BD17F611000024D87A /* UIKit.framework */; };
 		F36A18E317F611000024D87A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F36A18E117F611000024D87A /* InfoPlist.strings */; };
 		F36A18E517F611000024D87A /* Crowd_NavigationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F36A18E417F611000024D87A /* Crowd_NavigationTests.m */; };
+		F3A92D7117F926B500796D28 /* forward.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F3A92D6D17F926B500796D28 /* forward.mp3 */; };
+		F3A92D7217F926B500796D28 /* left.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F3A92D6E17F926B500796D28 /* left.mp3 */; };
+		F3A92D7317F926B500796D28 /* right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F3A92D6F17F926B500796D28 /* right.mp3 */; };
+		F3A92D7417F926B500796D28 /* stop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F3A92D7017F926B500796D28 /* stop.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,11 @@
 		F36A18E017F611000024D87A /* Crowd NavigationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Crowd NavigationTests-Info.plist"; sourceTree = "<group>"; };
 		F36A18E217F611000024D87A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F36A18E417F611000024D87A /* Crowd_NavigationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Crowd_NavigationTests.m; sourceTree = "<group>"; };
+		F3A92D6B17F9227000796D28 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		F3A92D6D17F926B500796D28 /* forward.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = forward.mp3; sourceTree = "<group>"; };
+		F3A92D6E17F926B500796D28 /* left.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = left.mp3; sourceTree = "<group>"; };
+		F3A92D6F17F926B500796D28 /* right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = right.mp3; sourceTree = "<group>"; };
+		F3A92D7017F926B500796D28 /* stop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = stop.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +110,7 @@
 		F36A18B817F611000024D87A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F3A92D6B17F9227000796D28 /* AudioToolbox.framework */,
 				F36A18B917F611000024D87A /* Foundation.framework */,
 				F36A18BB17F611000024D87A /* CoreGraphics.framework */,
 				F36A18BD17F611000024D87A /* UIKit.framework */,
@@ -126,6 +136,10 @@
 		F36A18C017F611000024D87A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F3A92D6D17F926B500796D28 /* forward.mp3 */,
+				F3A92D6E17F926B500796D28 /* left.mp3 */,
+				F3A92D6F17F926B500796D28 /* right.mp3 */,
+				F3A92D7017F926B500796D28 /* stop.mp3 */,
 				F36A18C117F611000024D87A /* Crowd Navigation-Info.plist */,
 				F36A18C217F611000024D87A /* InfoPlist.strings */,
 				F36A18C517F611000024D87A /* main.m */,
@@ -230,8 +244,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F36A18D217F611000024D87A /* Images.xcassets in Resources */,
+				F3A92D7217F926B500796D28 /* left.mp3 in Resources */,
 				F36A18C417F611000024D87A /* InfoPlist.strings in Resources */,
+				F3A92D7317F926B500796D28 /* right.mp3 in Resources */,
+				F3A92D7117F926B500796D28 /* forward.mp3 in Resources */,
 				F36A18CD17F611000024D87A /* Main.storyboard in Resources */,
+				F3A92D7417F926B500796D28 /* stop.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +479,7 @@
 				F36A18EA17F611000024D87A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F36A18EB17F611000024D87A /* Build configuration list for PBXNativeTarget "Crowd NavigationTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +488,7 @@
 				F36A18ED17F611000024D87A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

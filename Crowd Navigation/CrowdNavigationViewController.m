@@ -7,10 +7,13 @@
 //
 
 #import "CrowdNavigationViewController.h"
+#import <AVFoundation/AVAudioPlayer.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface CrowdNavigationViewController ()
 - (IBAction)getDirection:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *displayDirection;
+@property SystemSoundID mySound;
 
 @end
 
@@ -19,13 +22,66 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) playLeft{
+    NSString *soundFilePath =
+    [[NSBundle mainBundle] pathForResource: @"left"
+                                    ofType: @"mp3"];
+    
+    NSURL *fileURL = [[NSURL alloc] initFileURLWithPath: soundFilePath];
+    NSError *requestError;
+    
+    AVAudioPlayer *newPlayer =
+    [[AVAudioPlayer alloc] initWithContentsOfURL: fileURL
+                                           error: &requestError]; //Check errors?
+    
+    [newPlayer play];
+}
+
+- (void) playRight{
+    NSString *soundFilePath =
+    [[NSBundle mainBundle] pathForResource: @"right"
+                                    ofType: @"mp3"];
+    
+    NSURL *fileURL = [[NSURL alloc] initFileURLWithPath: soundFilePath];
+    
+    AVAudioPlayer *newPlayer =
+    [[AVAudioPlayer alloc] initWithContentsOfURL: fileURL
+                                           error: nil];
+    [newPlayer play];
+}
+
+- (void) playForward{
+    NSString *soundFilePath =
+    [[NSBundle mainBundle] pathForResource: @"forward"
+                                    ofType: @"mp3"];
+    
+    NSURL *fileURL = [[NSURL alloc] initFileURLWithPath: soundFilePath];
+    
+    AVAudioPlayer *newPlayer =
+    [[AVAudioPlayer alloc] initWithContentsOfURL: fileURL
+                                           error: nil];
+    [newPlayer play];
+}
+
+- (void) playStop{
+    NSString *soundFilePath =
+    [[NSBundle mainBundle] pathForResource: @"stop"
+                                    ofType: @"mp3"];
+    
+    NSURL *fileURL = [[NSURL alloc] initFileURLWithPath: soundFilePath];
+    
+    AVAudioPlayer *newPlayer =
+    [[AVAudioPlayer alloc] initWithContentsOfURL: fileURL
+                                           error: nil];
+    [newPlayer play];
 }
 
 - (IBAction)getDirection:(id)sender {
@@ -41,6 +97,12 @@
     
     NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
     NSString* responseString = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+    
+    if([responseString  isEqual: @"Left"]){
+        [self playLeft];
+    }
+    
+    
     self.displayDirection.text = responseString;
 }
 @end
