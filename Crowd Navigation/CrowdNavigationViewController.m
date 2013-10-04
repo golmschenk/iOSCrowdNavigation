@@ -10,8 +10,8 @@
 #import <AVFoundation/AVAudioPlayer.h>
 
 @interface CrowdNavigationViewController ()
-- (IBAction)getDirection:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *displayDirection;
+@property NSString *direction;
 @property AVAudioPlayer *leftPlayer;
 @property AVAudioPlayer *rightPlayer;
 @property AVAudioPlayer *forwardPlayer;
@@ -25,6 +25,12 @@
 {
     [super viewDidLoad];
     [self preparePlayers];
+    
+    [NSTimer scheduledTimerWithTimeInterval:0.5
+                                     target:self
+                                   selector:@selector(getDirection)
+                                   userInfo:nil
+                                    repeats:YES];
 }
 
 - (void)preparePlayers
@@ -96,7 +102,7 @@
     [self.stopPlayer play];
 }
 
-- (IBAction)getDirection:(id)sender {
+- (void)getDirection{
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.7.102:8080/getdirection"]
     //NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://169.254.106.204:8080/getdirection"]
                                                            cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
@@ -111,17 +117,21 @@
     NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
     NSString* responseString = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
     
-    if([responseString  isEqual: @"Left"]){
-        [self playLeft];
-    }
-    else if([responseString  isEqual: @"Right"]){
-        [self playRight];
-    }
-    else if([responseString  isEqual: @"Forward"]){
-        [self playForward];
-    }
-    else if([responseString  isEqual: @"Stop"]){
-        [self playStop];
+    if(![self.direction isEqualToString:responseString]){
+        self.direction = [NSString stringWithString:responseString];
+        
+        if([responseString  isEqual: @"Left"]){
+            [self playLeft];
+        }
+        else if([responseString  isEqual: @"Right"]){
+            [self playRight];
+        }
+        else if([responseString  isEqual: @"Forward"]){
+            [self playForward];
+        }
+        else if([responseString  isEqual: @"Stop"]){
+            [self playStop];
+        }
     }
     
     self.displayDirection.text = responseString;
