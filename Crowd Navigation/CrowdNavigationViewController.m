@@ -107,8 +107,9 @@
 
 //Get the current direction and play the sound for it. //TODO make more modular.
 - (void)getDirection{
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.7.102:8080/getdirection"]
-    //NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://169.254.106.204:8080/getdirection"]
+    //Add IP chooser.
+    //NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.7.102:8080/getdirection"]
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://169.254.106.204:8080/getdirection"]
                                                            cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
                                                        timeoutInterval:10];
     
