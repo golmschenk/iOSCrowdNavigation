@@ -25,7 +25,7 @@
 {
     [super viewDidLoad];
     [self preparePlayers];
-    
+    //TODO Move this into its own function.
     [NSTimer scheduledTimerWithTimeInterval:0.5
                                      target:self
                                    selector:@selector(getDirection)
@@ -33,6 +33,7 @@
                                     repeats:YES];
 }
 
+//Setup the audio players for the directions.
 - (void)preparePlayers
 {
     NSError *playerError;
@@ -76,8 +77,6 @@
     self.stopPlayer =
     [[AVAudioPlayer alloc] initWithContentsOfURL: stopURL
                                            error: &playerError];
-    
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -86,22 +85,27 @@
     // Dispose of any resources that can be recreated.
 }
 
+//Play audio for left.
 - (void) playLeft{
     [self.leftPlayer play];
 }
 
+//Play audio for right.
 - (void) playRight{
     [self.rightPlayer play];
 }
 
+//Play audio for forward.
 - (void) playForward{
     [self.forwardPlayer play];
 }
 
+//Play audio for stop.
 - (void) playStop{
     [self.stopPlayer play];
 }
 
+//Get the current direction and play the sound for it. //TODO make more modular.
 - (void)getDirection{
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.7.102:8080/getdirection"]
     //NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://169.254.106.204:8080/getdirection"]
