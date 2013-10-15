@@ -21,6 +21,7 @@
 		F36A18DB17F611000024D87A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F36A18BD17F611000024D87A /* UIKit.framework */; };
 		F36A18E317F611000024D87A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F36A18E117F611000024D87A /* InfoPlist.strings */; };
 		F36A18E517F611000024D87A /* Crowd_NavigationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F36A18E417F611000024D87A /* Crowd_NavigationTests.m */; };
+		F378A8E2180DCABD00F24829 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F378A8E1180DCABD00F24829 /* SettingsTableViewController.m */; };
 		F3A92D7117F926B500796D28 /* forward.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F3A92D6D17F926B500796D28 /* forward.mp3 */; };
 		F3A92D7217F926B500796D28 /* left.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F3A92D6E17F926B500796D28 /* left.mp3 */; };
 		F3A92D7317F926B500796D28 /* right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F3A92D6F17F926B500796D28 /* right.mp3 */; };
@@ -57,6 +58,8 @@
 		F36A18E017F611000024D87A /* Crowd NavigationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Crowd NavigationTests-Info.plist"; sourceTree = "<group>"; };
 		F36A18E217F611000024D87A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F36A18E417F611000024D87A /* Crowd_NavigationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Crowd_NavigationTests.m; sourceTree = "<group>"; };
+		F378A8E0180DCABD00F24829 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		F378A8E1180DCABD00F24829 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		F3A92D6B17F9227000796D28 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		F3A92D6D17F926B500796D28 /* forward.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = forward.mp3; sourceTree = "<group>"; };
 		F3A92D6E17F926B500796D28 /* left.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = left.mp3; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 				F36A18CF17F611000024D87A /* CrowdNavigationViewController.m */,
 				F36A18D117F611000024D87A /* Images.xcassets */,
 				F36A18C017F611000024D87A /* Supporting Files */,
+				F378A8E0180DCABD00F24829 /* SettingsTableViewController.h */,
+				F378A8E1180DCABD00F24829 /* SettingsTableViewController.m */,
 			);
 			path = "Crowd Navigation";
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F378A8E2180DCABD00F24829 /* SettingsTableViewController.m in Sources */,
 				F36A18D017F611000024D87A /* CrowdNavigationViewController.m in Sources */,
 				F36A18CA17F611000024D87A /* CrowdNavigationAppDelegate.m in Sources */,
 				F36A18C617F611000024D87A /* main.m in Sources */,
